@@ -81,21 +81,17 @@ export class GraphQLRedirectsService {
   async fetchRedirects(): Promise<RedirectInfo[]> {
     const siteName: string = this.options.siteName;
 
-    if (!siteName) {
+    if (!siteName || siteName === '') {
       throw new Error(siteNameError);
     }
 
-    const redirectsResult: Promise<RedirectsQueryResult> = this.graphQLClient.request(this.query, {
+    return (<Promise<RedirectsQueryResult>>this.graphQLClient.request(this.query, {
       siteName,
-    });
-
-    try {
-      return redirectsResult.then((result: RedirectsQueryResult) => {
-        return result?.site?.siteInfo?.redirects;
-      });
-    } catch (e) {
-      return Promise.reject(e);
-    }
+    }))
+      .then((result: RedirectsQueryResult) =>
+        result.site.siteInfo ? result.site.siteInfo.redirects : []
+      )
+      .catch((e) => Promise.reject(e));
   }
 
   /**
