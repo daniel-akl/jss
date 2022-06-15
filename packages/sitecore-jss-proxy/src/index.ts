@@ -417,9 +417,7 @@ export function rewriteRequestPath(
     }
   }
 
-  let path = `${config.layoutServiceRoute}?item=${encodeURIComponent(finalReqPath)}&sc_apikey=${
-    config.apiKey
-  }`;
+  let path = `${config.layoutServiceRoute}?item=${encodeURIComponent(finalReqPath)}&sc_apikey=${config.apiKey}&sc_sitename=${config.appName}`;
 
   if (lang) {
     path = `${path}&sc_lang=${lang}`;
