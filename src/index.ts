@@ -2,7 +2,8 @@ import { IncomingMessage, ServerResponse, ClientRequest, IncomingHttpHeaders } f
 import proxy from 'http-proxy-middleware';
 import HttpStatus from 'http-status-codes';
 import setCookieParser, { Cookie } from 'set-cookie-parser';
-import zlib from 'zlib'; // node.js standard lib
+// import zlib from 'zlib'; // node.js standard lib
+import * as zlib from 'zlib';
 import { AppRenderer } from './AppRenderer';
 import { ProxyConfig, LayoutServiceData, ServerBundle } from './ProxyConfig';
 import { RenderResponse } from './RenderResponse';

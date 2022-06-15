@@ -6,7 +6,8 @@
     "outDir": "dist/cjs",
     "strictBindCallApply": false,
     "typeRoots": ["node_modules/@types"],
-    "declarationDir": "./types"
+    "declarationDir": "./types",
+    "composite": true,
   },
   "exclude": ["node_modules", "types", "dist", "src/**/*.test.ts", "src/test-data/*.ts"]
 }

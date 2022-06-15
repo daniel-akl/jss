@@ -34,6 +34,8 @@ export interface ProxyConfig {
   apiKey: string;
   /** Custom Query String parameters to send to Layout Service, e.g. sc_site=my-site&tracing=false */
   qsParams?: string;
+  
+  appName?: string;
   /**
    * Array of paths to proxy without any SSR transformation (i.e. do not treat as app routes).
    * Note: exclusions are case-insensitive.
