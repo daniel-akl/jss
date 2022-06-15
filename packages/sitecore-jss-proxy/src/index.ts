@@ -417,10 +417,14 @@ export function rewriteRequestPath(
     }
   }
 
-  let path = `${config.layoutServiceRoute}?item=${encodeURIComponent(finalReqPath)}&sc_apikey=${config.apiKey}&sc_sitename=${config.appName}`;
+  let path = `${config.layoutServiceRoute}?item=${encodeURIComponent(finalReqPath)}&sc_apikey=${config.apiKey}`;
 
   if (lang) {
     path = `${path}&sc_lang=${lang}`;
+  }
+  
+  if (config.appName) {
+    path = `${path}&sc_site=${config.appName}`;
   }
 
   if (qs) {
