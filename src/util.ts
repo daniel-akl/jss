@@ -1,3 +1,4 @@
+// @ts-nocheck
 export const tryParseJson = (jsonString: string) => {
   try {
     const json = JSON.parse(jsonString);

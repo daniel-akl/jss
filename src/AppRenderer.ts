@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { RenderResponse } from './RenderResponse';
 
 export type AppRenderer = (

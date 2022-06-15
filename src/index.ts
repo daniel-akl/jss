@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IncomingMessage, ServerResponse, ClientRequest, IncomingHttpHeaders } from 'http';
 import proxy from 'http-proxy-middleware';
 import HttpStatus from 'http-status-codes';

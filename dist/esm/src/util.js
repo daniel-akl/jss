@@ -1,8 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildQueryString = exports.tryParseJson = void 0;
 // @ts-nocheck
-const tryParseJson = (jsonString) => {
+export const tryParseJson = (jsonString) => {
     try {
         const json = JSON.parse(jsonString);
         // handle non-exception-throwing cases
@@ -15,8 +12,6 @@ const tryParseJson = (jsonString) => {
     }
     return null;
 };
-exports.tryParseJson = tryParseJson;
-const buildQueryString = (params) => Object.keys(params)
+export const buildQueryString = (params) => Object.keys(params)
     .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`)
     .join('&');
-exports.buildQueryString = buildQueryString;
