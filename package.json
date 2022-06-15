@@ -1,5 +1,5 @@
 {
-  "name": "@sitecore-jss/sitecore-jss-proxy",
+  "name": "sitecore-jss-proxy",
   "version": "21.0.0-canary.94",
   "description": "Proxy middleware for express.js server.",
   "main": "dist/cjs/index.js",
